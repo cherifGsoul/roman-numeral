@@ -1,9 +1,9 @@
 const {expect} = require('chai');
-const fromArabic = require('./roman-numeral');
+const romanFromArabic = require('./roman-numeral');
 
 const makeTest = (arabic, expected) => {
 	return () => {
-		expect(fromArabic(arabic)).to.equal(expected);
+		expect(romanFromArabic(arabic)).to.equal(expected);
 	}
 };
 
@@ -18,4 +18,5 @@ describe('Roman numeral converter', () => {
 	it('converts 20 to XX', makeTest(20, 'XX'));
 	it('converts 4 to IV', makeTest(4, 'IV'));
 	it('converts 2020 to MMXX', makeTest(2020, 'MMXX'));
+	it('converts 2020 to MMXXII', makeTest(2022, 'MMXXII'));
 });
